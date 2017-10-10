@@ -16,6 +16,8 @@ namespace FriendLetter.Controllers
       LetterVariable myLetterVariable = new LetterVariable();
       myLetterVariable.SetRecipient("Eric");
       myLetterVariable.SetSender("John");
+      myLetterVariable.SetLocation("Buenos Aires");
+      myLetterVariable.SetSouvenir("bombilla");
       return View(myLetterVariable);
     }
     [Route("/favorite_photos")]
@@ -29,6 +31,8 @@ namespace FriendLetter.Controllers
       LetterVariable myLetterVariable = new LetterVariable();
       myLetterVariable.SetRecipient(Request.Query["recipient"]);
       myLetterVariable.SetSender(Request.Query["sender"]);
+      myLetterVariable.SetLocation(Request.Query["location"]);
+      myLetterVariable.SetSouvenir(Request.Query["souvenir"]);
       return View("Hello", myLetterVariable);
     }
   }
